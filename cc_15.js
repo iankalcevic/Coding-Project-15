@@ -53,3 +53,9 @@ riskDashboard.addEventListener("click", (event) => {
         riskDashboard.removeChild(riskCard);
     }; //Add resolve button so when click risk card is removed
 });
+
+// Task 4 - Categorizing Risks by Level (html file)
+
+//Test cases
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
