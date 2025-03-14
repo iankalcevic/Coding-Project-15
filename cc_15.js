@@ -85,3 +85,16 @@ increaseRiskLevelsButton.addEventListener("click", () => {
 //Test case
 addRiskItem("Employee Retention", "Low", "HR");
 // Clicking "Increase Risk Levels" should change it to "Medium".
+
+// Task 6 - Handling Event Propagation
+
+riskDashboard.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        event.stopPropagation();
+        const riskCard = event.target.closest(".riskCard");
+        riskDashboard.removeChild(riskCard);
+    };
+}); //Ensure no unwanted risk card clicking
+
+//Test cases
+// Click inside a risk card should not trigger a dashboard-wide event.
