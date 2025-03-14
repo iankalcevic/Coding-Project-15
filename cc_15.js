@@ -59,3 +59,29 @@ riskDashboard.addEventListener("click", (event) => {
 //Test cases
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+// Task 5 - Implementing Bulk Updates
+
+const increaseRiskLevelsButton = document.getElementById("increaseRiskLevels");
+
+increaseRiskLevelsButton.addEventListener("click", () => {
+    const riskCards = document.querySelectorAll(".riskCard");
+    riskCards.forEach(card => {
+        const levelElement = card.querySelector("p");
+        const currentLevel = levelElement.textContent.replace("Risk Level: ", "");
+        let newLevel;
+        if (currentLevel ==="Low") {
+            newLevel = "Medium";
+        } else if (currentLevel === "Medium") {
+            newLevel = "High";
+        } else {
+            newLevel = "High;"
+        }; //Add button to dashboard that increases levels
+        levelElement.textContent = 'Risk Level: ${newLevel}';
+        card.className = 'riskCard ${newLevel.toLowerCase()}';
+    });
+});
+
+//Test case
+addRiskItem("Employee Retention", "Low", "HR");
+// Clicking "Increase Risk Levels" should change it to "Medium".
