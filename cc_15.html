@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #28a745;
+        }
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        main {
+            padding: 20px;
+        }
+        #riskDashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .riskCard {
+            background-color: white;
+            border: 1px solid;
+            border-radius: 8px;
+            padding: 20px;
+            width: 225px;
+        }
+        .riskCard h3, .riskCard p {
+            margin: 0 0 10px;
+        }
+        .riskCard button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .highlight {
+          background-color: #218838;
+        }
+        .riskCard button:hover {
+            background-color: lightblue;
+        }
+        .riskCard.low {
+            background-color: green;
+        }
+        .riskCard.medium {
+            background-color: yellow;
+        }
+        .riskCard.high {
+            background-color: red;
+        }
+    </style>
+</head>
+  <body>
+    
+    //Task 1 
+    <header>
+      <h1>Risk Management Dashboard</h1>
+    </header>
+
+    <main> //Create div containing all risk items
+      <div id="rishDashboard"></div>
+      <form id="riskForm">
+
+        //Input form for adding new risk items
+        <input type="text" id="riskName" placeholder="Risk Name" required>
+        <input type="text" id="department" placeholder="Department" required>
+        <select id="riskLevel" required>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button type="Submit now">Add Risk</button> //Button to submit new risk assessments
+      </form>
+      <button id="increaseLevels">Increase Risk Levels</button>
+    </main>
+
+    <footer>
+      <p>&copy; Risk Managment System</p>
+    </footer>
+    
+    <script src="cc_15.js"></script>
+  </body>
+</html>     
+
